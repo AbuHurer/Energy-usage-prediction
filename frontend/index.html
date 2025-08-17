@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Usage Prediction</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Animated Background Particles */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 70%) repeat;
+        background-size: 200px 200px;
+        animation: moveBackground 20s linear infinite;
+        z-index: 0;
+      }
+
+      @keyframes moveBackground {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(50px, 50px);
+        }
+      }
+
+      /* Glowing wave effect */
+      .glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(255, 230, 0, 0.1), transparent 70%);
+        animation: pulse 6s ease-in-out infinite alternate;
+        z-index: 0;
+      }
+
+      @keyframes pulse {
+        from {
+          transform: scale(1);
+          opacity: 0.4;
+        }
+        to {
+          transform: scale(1.2);
+          opacity: 0.7;
+        }
+      }
+
+      /* Predict button glow */
+      .predict-btn {
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 10px rgba(255, 230, 0, 0.4);
+      }
+
+      .predict-btn:hover {
+        background: #facc15; /* Tailwind yellow-400 */
+        box-shadow: 0 0 20px rgba(255, 230, 0, 0.8),
+                    0 0 40px rgba(255, 230, 0, 0.6),
+                    0 0 60px rgba(255, 230, 0, 0.4);
+        transform: scale(1.05);
+      }
+
+      /* Ensure app content sits above animations */
+      #root {
+        position: relative;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Glowing energy wave -->
+    <div class="glow"></div>
+
+    <div id="root" class="w-full max-w-3xl p-6">
+      <div class="bg-[#111827]/90 backdrop-blur-lg rounded-2xl shadow-2xl p-10 text-center border border-gray-700">
+        <h1 class="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
+          ⚡ Energy Usage Predictor
+        </h1>
+        <p class="text-gray-400 mb-8">
+          Enter details below to forecast future energy consumption
+        </p>
+
+        <!-- Prediction Card -->
+        <div class="bg-[#1f2937]/80 p-6 rounded-xl shadow-md">
+          <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+            🔮 Prediction Settings
+          </h2>
+          <form class="flex flex-col md:flex-row gap-4 justify-center">
+            <input
+              type="text"
+              placeholder="Enter State (e.g., Punjab)"
+              class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+            />
+            <input
+              type="text"
+              placeholder="Enter Region (e.g., NR)"
+              class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+            />
+            <input
+              type="number"
+              placeholder="Days (e.g., 30)"
+              class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 focus:ring-2 focus:ring-yellow-400 focus:outline-none w-28"
+            />
+            <button
+              type="submit"
+              class="predict-btn px-6 py-2 rounded-lg bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition-all"
+            >
+              🚀 Predict
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
