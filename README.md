@@ -89,7 +89,7 @@ Frontend will run on 👉 **[http://127.0.0.1:5173](http://127.0.0.1:5173)**
 
 | Home Screen                         | Prediction Result                          |
 | ----------------------------------- | ------------------------------------------ |
-| ![App Screenshot](./assets/SS1.png) | ![Prediction Screenshot](./assets/SS2.png) |
+| ![App Screenshot](SS1.png) | ![Prediction Screenshot](SS2.png) |
 
 ---
 
